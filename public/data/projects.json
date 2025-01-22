@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "companyName": "Paple",
+    "image": "/public/assets/company-1.png",
+    "altText": "apple-logo",
+    "projectName": "E-Commerce Site",
+    "description": "Paple is a next-generation e-commerce platform designed to provide a seamless shopping experience for customers while offering powerful tools for sellers to manage their products inventory, and analytics.",
+    "deadline": "May 30, 2025"
+  },
+  {
+    "id": 2,
+    "companyName": "Logle",
+    "image": "/public/assets/company-2.png",
+    "altText": "apple-logo",
+    "projectName": "Health-tech Mobile App",
+    "description": "Logle is a next-generation health-tech platform designed to provide a seamless experience for customers while offering powerful tools for users to track their health and well-being.",
+    "deadline": "May 30, 2025"
+  }
+]
