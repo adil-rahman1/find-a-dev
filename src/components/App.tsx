@@ -1,9 +1,9 @@
-import ProjectsList from "./ProjectsList";
+import DevDashboard from "./DevDashboard";
 
 const App = () => {
   return (
     <>
-      <ProjectsList />
+      <DevDashboard />
     </>
   );
 };
