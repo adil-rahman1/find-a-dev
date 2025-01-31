@@ -1,4 +1,4 @@
-import ProjectsList from "./ProjectsList";
+import ProjectsList from "../components/ProjectsList";
 
 const OpenProjects = () => {
   return <ProjectsList isViewOnly={false} />;

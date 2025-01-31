@@ -1,4 +1,4 @@
-import CustomNavLink from "./CustomNavLink";
+import CustomNavLink from "../components/CustomNavLink";
 
 const DevNavbar = () => {
   return (
