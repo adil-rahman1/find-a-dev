@@ -1,4 +1,4 @@
-interface Project {
+interface IProject {
   id: number;
   companyName: string;
   image: string;
@@ -8,4 +8,4 @@ interface Project {
   deadline: string;
 }
 
-export default Project;
+export default IProject;

@@ -1,7 +1,7 @@
-import Project from "../types/Project";
+import IProject from "../types/Project";
 
 interface ProjectItemProps {
-  project: Project;
+  project: IProject;
   children?: React.ReactNode;
 }
 

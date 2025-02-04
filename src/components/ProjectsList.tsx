@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Project from "../types/Project";
+import IProject from "../types/Project";
 import ProjectItem from "./ProjectItem";
 import ActionBtns from "./ActionBtns";
 
@@ -8,7 +8,7 @@ interface ProjectsListProps {
 }
 
 const ProjectsList = ({ isViewOnly }: ProjectsListProps) => {
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<IProject[]>([]);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -17,7 +17,7 @@ const ProjectsList = ({ isViewOnly }: ProjectsListProps) => {
         if (!response.ok) {
           throw new Error("Failed to fetch projects data");
         }
-        const data: Project[] = await response.json();
+        const data: IProject[] = await response.json();
         setProjects(data);
       } catch (error) {
         console.log("Error fetching data", error);
