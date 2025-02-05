@@ -7,6 +7,8 @@ const socialLinks = {
   developer_id: 1,
   linkedin: "https://www.linkedin.com/in/adil-rahman1/",
   github: "https://github.com/adil-rahman1",
+  website: "www.google.com",
+  otherSite: "www.youtube.com",
 };
 
 const Profile = () => {
