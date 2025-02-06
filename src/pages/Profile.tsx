@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Pill from "../components/Pill";
 import PortfolioCard from "../components/PortfolioCard";
 import SocialLinks from "../components/SocialLinks";
@@ -12,6 +13,8 @@ const socialLinks = {
 };
 
 const Profile = () => {
+  const [isEditing, setIsEditing] = useState(false);
+
   const services = ["Web development", "Mobile development"];
 
   return (
@@ -22,7 +25,11 @@ const Profile = () => {
         alt=""
       />
       <p className="font-bold text-xl my-4">John Smith</p>
-      <SocialLinks socialLinks={socialLinks} />
+      <SocialLinks
+        isEditing={isEditing}
+        setIsEditing={setIsEditing}
+        socialLinks={socialLinks}
+      />
       <p className="font-bold my-4">About me</p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis

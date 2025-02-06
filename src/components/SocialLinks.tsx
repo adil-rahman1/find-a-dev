@@ -4,16 +4,26 @@ import LinkedInLogo from "../../public/assets/icons/linkedin.svg";
 import GitHubLogo from "../../public/assets/icons/github.svg";
 import WebsiteLogo from "../../public/assets/icons/website.svg";
 import OtherSiteLogo from "../../public/assets/icons/otherSite.svg";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 interface SocialLinksProps {
+  isEditing: boolean;
+  setIsEditing: Dispatch<SetStateAction<boolean>>;
   socialLinks: ISocialLinks;
 }
 
-const SocialLinks = ({ socialLinks }: SocialLinksProps) => {
-  const [isEditing, setIsEditing] = useState(false);
+const SocialLinks = ({
+  isEditing,
+  setIsEditing,
+  socialLinks,
+}: SocialLinksProps) => {
   const [savedSocialLinks, setSavedSocialLinks] = useState(socialLinks);
   const [editedSocialLinks, seEditedSocialLinks] = useState(socialLinks);
+
+  function saveNewSocialLinks() {
+    setSavedSocialLinks(editedSocialLinks);
+    setIsEditing(false);
+  }
 
   return (
     <div className="flex flex-col items-start">
@@ -26,7 +36,7 @@ const SocialLinks = ({ socialLinks }: SocialLinksProps) => {
               value={editedSocialLinks.linkedin}
               onChange={(e) =>
                 seEditedSocialLinks({
-                  ...socialLinks,
+                  ...editedSocialLinks,
                   linkedin: e.target.value,
                 })
               }
@@ -44,7 +54,7 @@ const SocialLinks = ({ socialLinks }: SocialLinksProps) => {
               value={editedSocialLinks.github}
               onChange={(e) =>
                 seEditedSocialLinks({
-                  ...socialLinks,
+                  ...editedSocialLinks,
                   github: e.target.value,
                 })
               }
@@ -62,7 +72,7 @@ const SocialLinks = ({ socialLinks }: SocialLinksProps) => {
               value={editedSocialLinks.website}
               onChange={(e) =>
                 seEditedSocialLinks({
-                  ...socialLinks,
+                  ...editedSocialLinks,
                   website: e.target.value,
                 })
               }
@@ -80,7 +90,7 @@ const SocialLinks = ({ socialLinks }: SocialLinksProps) => {
               value={editedSocialLinks.otherSite}
               onChange={(e) =>
                 seEditedSocialLinks({
-                  ...socialLinks,
+                  ...editedSocialLinks,
                   otherSite: e.target.value,
                 })
               }
@@ -93,7 +103,7 @@ const SocialLinks = ({ socialLinks }: SocialLinksProps) => {
         <div>
           <button
             className=" text-white bg-green-400 hover:bg-green-500 p-1 w-12 ml-7 mr-2 rounded-md"
-            onClick={() => setSavedSocialLinks(editedSocialLinks)}
+            onClick={saveNewSocialLinks}
           >
             Save
           </button>
@@ -107,7 +117,7 @@ const SocialLinks = ({ socialLinks }: SocialLinksProps) => {
       )}
       {!isEditing && (
         <button
-          className="text-white bg-gray-500 hover:bg-gray-600 p-1 w-48 mt-2 rounded-md"
+          className="text-white bg-sky-600 hover:bg-sky-700 p-1 w-48 mt-2 rounded-md"
           onClick={() => setIsEditing(true)}
         >
           Edit profile
