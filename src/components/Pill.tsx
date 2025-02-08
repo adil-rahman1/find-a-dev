@@ -1,17 +1,9 @@
 interface PillProps {
-  services: string[];
+  text: string;
 }
 
-const Pill = ({ services }: PillProps) => {
-  return (
-    <div className="flex flex-row gap-4">
-      {services.map((service) => (
-        <p className="border border-solid rounded-full p-2 text-sm">
-          {service}
-        </p>
-      ))}
-    </div>
-  );
+const Pill = ({ text }: PillProps) => {
+  return <p className="border border-solid rounded-full p-2 text-sm">{text}</p>;
 };
 
 export default Pill;

@@ -22,7 +22,7 @@ const Profile = () => {
   const [editedSocialLinks, setEditedSocialLinks] =
     useState<ISocialLinks>(socialLinks);
 
-  const services = ["Web development", "Mobile development"];
+  const skills = ["Web development", "Mobile development"];
 
   function updateProfile() {
     setSavedAboutMe(editedAboutMe);
@@ -35,7 +35,7 @@ const Profile = () => {
       <img
         className="border rounded-full w-28 h-28 my-4"
         src="/public/assets/dev-1-profile-photo.jpeg"
-        alt=""
+        alt="profile-image"
       />
       <p className="font-bold text-xl my-4">John Smith</p>
       <div>
@@ -81,7 +81,12 @@ const Profile = () => {
       )}
 
       <p className="font-bold my-4">Services</p>
-      <Pill services={services} />
+      <div className="flex flex-row gap-4">
+        {skills.map((skill) => (
+          <Pill text={skill} />
+        ))}
+      </div>
+
       <p className="font-bold my-4">Portfolio</p>
       <PortfolioCard />
     </div>
